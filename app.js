@@ -3,6 +3,9 @@ const fs = require('fs');
 const app = express();
 const port = 3000;
 
+// Middleware para parsear datos del formulario
+app.use(express.urlencoded({ extended: true }));
+app.use(express.json());
 
 app.get('/', (req, res) => {
   res.send('Hello World!');
